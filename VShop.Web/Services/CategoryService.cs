@@ -8,7 +8,7 @@ namespace VShop.Web.Services
     {
         private readonly IHttpClientFactory _clientFactory;
         private readonly JsonSerializerOptions _options;
-        private const string apiEndpoint = "/api/categories";
+        private const string apiEndpoint = "/api/categories/";
 
         public CategoryService(IHttpClientFactory clientFactory)
         {

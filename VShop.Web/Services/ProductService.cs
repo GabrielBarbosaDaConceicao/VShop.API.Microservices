@@ -8,7 +8,7 @@ namespace VShop.Web.Services
     public class ProductService : IProductService
     {
         private readonly IHttpClientFactory _clientFactory;
-        private const string? apiEndpoint = "/api/products";
+        private const string? apiEndpoint = "/api/products/";
         private readonly JsonSerializerOptions _options;
         private ProductViewModel productVM;
         private IEnumerable<ProductViewModel> productsVM;
@@ -86,7 +86,7 @@ namespace VShop.Web.Services
             var client = _clientFactory.CreateClient("ProductApi");
             ProductViewModel productUpdated = new ProductViewModel();
 
-            using (var response = await client.PutAsJsonAsync(apiEndpoint, _options))
+            using (var response = await client.PutAsJsonAsync(apiEndpoint, productVM))
             {
                 if (response.IsSuccessStatusCode)
                 {
