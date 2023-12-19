@@ -1,3 +1,6 @@
+using VShop.Web.Services;
+using VShop.Web.Services.Contracts;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +11,8 @@ builder.Services.AddHttpClient("ProductApi", client =>
     // Set the base address of the named client.
     client.BaseAddress = new Uri(builder.Configuration["ServiceUri:ProductApi"]);
 });
+
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 

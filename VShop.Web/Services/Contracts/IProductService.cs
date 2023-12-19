@@ -1,6 +1,6 @@
 ﻿using VShop.Web.Models;
 
-namespace VShop.Web.Servoces.Contracts
+namespace VShop.Web.Services.Contracts
 {
     public interface IProductService
     {
